@@ -36,7 +36,7 @@ public class Index {
     public static class Store extends HashMap<Integer, HashMap<Integer, Set<Integer>>> {
         public void put(int a, int b, int c) {
             Map<Integer, Set<Integer>> action = computeIfAbsent(a, k -> new HashMap<>());
-            Set<Integer> objects = action.computeIfAbsent(b, k -> new HashSet<>());
+            Set<Integer> objects = action.computeIfAbsent(b, k -> new TreeSet<>());
             objects.add(c);
         }
     }
